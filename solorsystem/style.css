@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #045eb7, #000814);
+  overflow: hidden;
+  height: 100vh;
+}
+
+.solar-system {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2; 
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffe066, #ff8800, #ff3300);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 60px 30px #ff9900;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin linear infinite;
+}
+
+.orbit1 { width: 140px; height: 140px; animation-duration: 4s; }
+.orbit2 { width: 200px; height: 200px; animation-duration: 6s; }
+.orbit3 { width: 280px; height: 280px; animation-duration: 8s; }
+.orbit4 { width: 370px; height: 370px; animation-duration: 11s; }
+.orbit5 { width: 460px; height: 460px; animation-duration: 14s; }
+.orbit6 { width: 560px; height: 560px; animation-duration: 18s; }
+.orbit7 { width: 660px; height: 660px; animation-duration: 22s; }
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.planet1 {
+  width: 12px;
+  height: 12px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg');
+  box-shadow: 0 0 8px #ccc;
+}
+
+.planet2 {
+  width: 16px;
+  height: 16px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/85/Venus_globe.jpg');
+  box-shadow: 0 0 10px #ff9800;
+}
+
+.planet3 {
+  width: 18px;
+  height: 18px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg');
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.planet4 {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg');
+  box-shadow: 0 0 10px #ff5722;
+}
+
+.planet5 {
+  width: 22px;
+  height: 22px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg');
+  box-shadow: 0 0 12px #ffaa00;
+}
+
+.planet6 {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg');
+  box-shadow: 0 0 10px #80deea;
+}
+
+.planet7 {
+  width: 18px;
+  height: 18px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg');
+  box-shadow: 0 0 10px #82b1ff;
+}
+.planet8 {
+  width: 25px;
+  height: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg');
+
+  box-shadow:0 0 10px red;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  overflow: hidden;
+  z-index: 1; 
+}
+
+.shooting-star {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 6px;
+  background: linear-gradient(white, rgba(255,255,255,0));
+  opacity: 0.8;
+  transform: rotate(60deg);
+  animation: shooting 5s linear infinite;
+}
+
+.shooting-star:nth-child(1) {
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.shooting-star:nth-child(2) {
+  left: 50%;
+  animation-delay: 5s;
+}
+
+.shooting-star:nth-child(3) {
+  left: 70%;
+  animation-delay: 8s;
+}
+.shooting-star:nth-child(4) {
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.shooting-star:nth-child(5) {
+  left: 50%;
+  animation-delay: 5s;
+}
+
+.shooting-star:nth-child(6) {
+  left: 70%;
+  animation-delay: 8s;
+}
+
+@keyframes shooting {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    left: calc(100% + 100px);
+    opacity: 0;
+  }
+  200%{
+    top: 200%;
+    opacity: 1;
+  }
+}
